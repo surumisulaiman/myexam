@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import "./style.css"
+
 
 export default class Users extends React.Component {
   constructor(props){
@@ -23,23 +23,23 @@ export default class Users extends React.Component {
   }
 
   render(){
-    const UserRows = this.state.users.map(user =>{
-      return <tr key={user.id}>
-        <td>{user.name}</td>
-        <td>{user.username}</td>
-        <td>{user.email}</td>
-        <td>{user.address.street},{user.address.suit},{user.address.city},{user.address.zipcode}</td>
+    const UserRows = this.state.users.map(user1 =>{
+      return <tr key={user1.id}>
+        <td>{user1.name}</td>
+        <td>{user1.username}</td>
+        <td>{user1.email}</td>
+        <td>{user1.address.street},{user1.address.suit},{user1.address.city},{user1.address.zipcode}</td>
         <td><Link to={
           {
             pathname: '/todo',
-            state: { user: {id: user.id}, fromPath: '/users'}
+            state: { user2: {id: user1.id}, fromPath: '/users'}
           }
         }>View</Link></td>
 
 <td><Link to={
           {
             pathname: '/posts',
-            state: { user: {id: user.id}, fromPath: '/users'}
+            state: { post1: {id: user1.id}, fromPath: '/users'}
           }
         }>View</Link></td>
       </tr>
